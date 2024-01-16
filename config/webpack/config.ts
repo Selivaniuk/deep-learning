@@ -1,15 +1,22 @@
-import plugins from './plugins';
-import loaders from './loaders';
-import resolves from './resolves';
-import devServer from './devServer';
-import {type BuildOptions} from './types';
 import {type Configuration} from 'webpack';
 
-const webpackConfig = ({mode, paths, port, isDev}: BuildOptions): Configuration => ({
+import devServer from './devServer';
+import loaders from './loaders';
+import plugins from './plugins';
+import resolves from './resolves';
+
+import {type BuildOptions} from './types';
+
+const webpackConfig = ({
+	mode,
+	paths,
+	port,
+	isDev,
+}: BuildOptions): Configuration => ({
 	mode,
 	entry: paths.entry,
 	module: {
-		rules: loaders(),
+		rules: loaders(paths, isDev),
 	},
 	resolve: resolves(paths),
 	output: {

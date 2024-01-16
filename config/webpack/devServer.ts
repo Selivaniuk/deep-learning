@@ -1,5 +1,6 @@
-import type {Configuration as DevServerConfiguration} from 'webpack-dev-server';
 import {type Port} from './types';
+
+import type {Configuration as DevServerConfiguration} from 'webpack-dev-server';
 
 const devServer = (port: Port): DevServerConfiguration => ({
 	port,

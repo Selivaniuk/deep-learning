@@ -1,4 +1,5 @@
 import {type ResolveOptions} from 'webpack';
+
 import {type BuildPaths} from './types';
 
 const resolves = (paths: BuildPaths): ResolveOptions => ({
