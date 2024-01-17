@@ -13,13 +13,13 @@ export const RoutePath: Record<AppRoutes, string> = {
 	[AppRoutes.TEST]: '/test',
 };
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
-	[AppRoutes.HOME]: {
+export const routeConfig: RouteProps[] = [
+	{
 		path: RoutePath[AppRoutes.HOME],
 		element: <HomePage />,
 	},
-	[AppRoutes.TEST]: {
+	{
 		path: RoutePath[AppRoutes.TEST],
 		element: <TestPage />,
 	},
-};
+];
