@@ -6,6 +6,7 @@ const devServer = (port: Port): DevServerConfiguration => ({
 	port,
 	open: true,
 	hot: true,
+	historyApiFallback: true,
 });
 
 export default devServer;

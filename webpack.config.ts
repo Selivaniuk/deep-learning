@@ -19,9 +19,10 @@ const paths: BuildPaths = {
 	src: path.resolve(__dirname, 'src'),
 };
 
-export default (env: BuildEnv): Configuration => {
-	const mode = env.mode ?? defaultMode;
-	const port = env.port ?? defaultPort;
+export default ({
+	mode = defaultMode,
+	port = defaultPort,
+}: BuildEnv): Configuration => {
 	const isDev = mode === 'development';
 
 	const options: BuildOptions = {
