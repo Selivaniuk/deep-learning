@@ -1,0 +1,38 @@
+.app.light {
+	// background
+	--bg: var(--background-light);
+
+	// text
+	--text: var(--text-dark);
+	--text-rv: var(--text-light);
+
+	// --text-soft: var(--text-soft-dark);
+
+	// shadow
+	--shadow: var(--shadow-dark);
+	--shadow-rv: var(--shadow-light);
+	--shadow-hard: var(--shadow-hard-dark);
+	--shadow-hard-rv: var(--shadow-hard-light);
+
+	// transparent
+	--transparent: var(--transparent-dark);
+	--transparent-rv: var(--transparent-light);
+
+	// transparent soft
+	--transparent-soft: var(--transparent-soft-dark);
+	--transparent-soft-rv: var(--transparent-soft-light);
+
+	// button
+	--btn-bg: var(--text-light);
+	--btn-bg-rv: var(--tertiary);
+	--btn-hover-color: var(--btn-hover-color-dark);
+	--btn-active-color: var(--btn-hover-color-light);
+	--btn-hover-color-soft: var(--btn-hover-color-dark-soft);
+	--btn-active-color-soft: var(--btn-hover-color-light-soft);
+
+	// separator
+	--separator: var(--separator-light);
+
+	// logo
+	--logo-color: var(--tertiary);
+}

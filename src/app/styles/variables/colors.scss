@@ -1,0 +1,48 @@
+:root {
+	--primary: #ff4454;
+	--secondary: #eab041;
+	--tertiary: #322b2c;
+	--gradient: linear-gradient(to right, var(--secondary), var(--primary));
+
+	// background
+	--background-light: #eee3d9;
+	--background-dark: #161414;
+	--background-soft-dark: #16141480;
+	--background-accent: #322b2c;
+
+	// text
+	--text-dark: #141a20;
+	--text-light: #fff;
+	--text-placeholder: #858181;
+
+	// system
+	--system-success: #28a745;
+	--system-warning: #ffc107;
+	--system-danger: #ff4d4f;
+
+	// transparent
+	--transparent-primary: rgb(255 68 84 / 70%);
+	--transparent-secondary: rgb(234 176 65 / 50%);
+	--transparent-dark: rgb(0 0 0 / 70%);
+	--transparent-light: rgb(255 255 255 / 70%);
+
+	// transparent soft
+	--transparent-soft-dark: rgb(0 0 0 / 10%);
+	--transparent-soft-light: rgb(255 255 255 / 10%);
+
+	// shadow
+	--shadow-light: 0px 4px 12px rgb(255 255 255 / 10%);
+	--shadow-dark: 0px 4px 12px rgb(0 0 0 / 10%);
+	--shadow-hard-dark: 0px 4px 4px rgb(0 0 0 / 20%);
+	--shadow-hard-light: 0px 4px 4px rgb(255 255 255 / 20%);
+
+	// separator
+	--separator-light: #d3d3cf;
+	--separator-dark: #393737;
+
+	// button
+	--btn-hover-color-light: rgb(255 255 255 / 20%);
+	--btn-hover-color-dark: rgb(0 0 0 / 20%);
+	--btn-hover-color-light-soft: rgb(255 255 255 / 10%);
+	--btn-hover-color-dark-soft: rgb(0 0 0 / 10%);
+}

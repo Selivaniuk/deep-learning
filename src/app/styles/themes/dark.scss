@@ -1,0 +1,38 @@
+.app.dark {
+	// background
+	--bg: var(--background-dark);
+
+	// text
+	--text: var(--text-light);
+	--text-rv: var(--text-dark);
+
+	// --text-soft: var(--text-soft-light);
+
+	// shadow
+	--shadow: var(--shadow-light);
+	--shadow-rv: var(--shadow-dark);
+	--shadow-hard: var(--shadow-hard-light);
+	--shadow-hard-rv: var(--shadow-hard-dark);
+
+	// transparent
+	--transparent: var(--transparent-light);
+	--transparent-rv: var(--transparent-dark);
+
+	// transparent soft
+	--transparent-soft: var(--transparent-soft-light);
+	--transparent-soft-rv: var(--transparent-soft-dark);
+
+	// button
+	--btn-bg: var(--tertiary);
+	--btn-bg-rv: var(--text-light);
+	--btn-hover-color: var(--btn-hover-color-light);
+	--btn-active-color: var(--btn-hover-color-dark);
+	--btn-hover-color-soft: var(--btn-hover-color-light-soft);
+	--btn-active-color-soft: var(--btn-hover-color-dark-soft);
+
+	// separator
+	--separator: var(--separator-dark);
+
+	// logo
+	--logo-color: var(--text-light);
+}
