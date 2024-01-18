@@ -1,3 +1,5 @@
+@import './variables/text';
+
 *,
 *::before,
 *::after {
@@ -29,115 +31,36 @@ body {
 	font-family: Montserrat, sans-serif;
 }
 
+a {
+	color: var(--text);
+	text-decoration: none;
+}
+
 p,
 a {
-	font-size: var(--font-size-p2-s);
-	font-weight: var(--font-weight-p2-s);
-	letter-spacing: var(--letter-spacing-p2-s);
-	line-height: var(--line-height-p2-s);
-	text-transform: var(--text-transform-p2-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-p2-m);
-		font-weight: var(--font-weight-p2-m);
-		letter-spacing: var(--letter-spacing-p2-m);
-		line-height: var(--line-height-p2-m);
-		text-transform: var(--text-transform-p2-m);
-	}
+	@include p2;
 }
 
 h1 {
-	font-size: var(--font-size-h1-s);
-	font-weight: var(--font-weight-h1-s);
-	letter-spacing: var(--letter-spacing-h1-s);
-	line-height: var(--line-height-h1-s);
-	text-transform: var(--text-transform-h1-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h1-m);
-		font-weight: var(--font-weight-h1-m);
-		letter-spacing: var(--letter-spacing-h1-m);
-		line-height: var(--line-height-h1-m);
-		text-transform: var(--text-transform-h1-m);
-	}
+	@include h1;
 }
 
 h2 {
-	font-size: var(--font-size-h2-s);
-	font-weight: var(--font-weight-h2-s);
-	letter-spacing: var(--letter-spacing-h2-s);
-	line-height: var(--line-height-h2-s);
-	text-transform: var(--text-transform-h2-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h2-m);
-		font-weight: var(--font-weight-h2-m);
-		letter-spacing: var(--letter-spacing-h2-m);
-		line-height: var(--line-height-h2-m);
-		text-transform: var(--text-transform-h2-m);
-	}
+	@include h2;
 }
 
 h3 {
-	font-size: var(--font-size-h3-s);
-	font-weight: var(--font-weight-h3-s);
-	letter-spacing: var(--letter-spacing-h3-s);
-	line-height: var(--line-height-h3-s);
-	text-transform: var(--text-transform-h3-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h3-m);
-		font-weight: var(--font-weight-h3-m);
-		letter-spacing: var(--letter-spacing-h3-m);
-		line-height: var(--line-height-h3-m);
-		text-transform: var(--text-transform-h3-m);
-	}
+	@include h3;
 }
 
 h4 {
-	font-size: var(--font-size-h4-s);
-	font-weight: var(--font-weight-h4-s);
-	letter-spacing: var(--letter-spacing-h4-s);
-	line-height: var(--line-height-h4-s);
-	text-transform: var(--text-transform-h4-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h4-m);
-		font-weight: var(--font-weight-h4-m);
-		letter-spacing: var(--letter-spacing-h4-m);
-		line-height: var(--line-height-h4-m);
-		text-transform: var(--text-transform-h4-m);
-	}
+	@include h4;
 }
 
 h5 {
-	font-size: var(--font-size-h5-s);
-	font-weight: var(--font-weight-h5-s);
-	letter-spacing: var(--letter-spacing-h5-s);
-	line-height: var(--line-height-h5-s);
-	text-transform: var(--text-transform-h5-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h5-m);
-		font-weight: var(--font-weight-h5-m);
-		letter-spacing: var(--letter-spacing-h5-m);
-		line-height: var(--line-height-h5-m);
-		text-transform: var(--text-transform-h5-m);
-	}
+	@include h5;
 }
 
 h6 {
-	font-size: var(--font-size-h6-s);
-	font-weight: var(--font-weight-h6-s);
-	letter-spacing: var(--letter-spacing-h6-s);
-	line-height: var(--line-height-h6-s);
-	text-transform: var(--text-transform-h6-s);
-
-	@media screen and (width >= 767px) {
-		font-size: var(--font-size-h6-m);
-		font-weight: var(--font-weight-h6-m);
-		letter-spacing: var(--letter-spacing-h6-m);
-		line-height: var(--line-height-h6-m);
-		text-transform: var(--text-transform-h6-m);
-	}
+	@include h6;
 }

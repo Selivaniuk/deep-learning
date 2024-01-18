@@ -1,14 +1,15 @@
 @import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap';
 @import 'variables/colors';
 @import 'variables/text';
+@import 'variables/globals';
 @import 'themes/dark';
 @import 'themes/light';
 @import 'reset';
 
 .app {
 	height: 100vh;
-	background-color: var(--bg);
 	color: var(--text);
+	background-color: var(--bg);
 	transition:
 		background-color 0.3s linear,
 		color 0.3s linear;

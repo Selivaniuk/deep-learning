@@ -1,0 +1,22 @@
+{
+	"React Component": {
+		"prefix": "rc",
+		"body": [
+			"import {type FC} from 'react';"
+			"",
+			"import styles from './$TM_FILENAME_BASE.module.scss';",
+			"",
+			"const $TM_FILENAME_BASE: FC = () => {",
+			"  return (",
+			"    <div>",
+			"      $2",
+			"    </div>",
+			"  )",
+			"};",
+			"",
+			"export default $TM_FILENAME_BASE;",
+			"",
+		],
+		"description": "React Component",
+	},
+}

@@ -40,7 +40,21 @@ const loaders = (paths: BuildPaths, isDev: boolean): RuleSetRule[] => {
 		exclude: /node_modules/,
 	};
 
-	return [tsLoader, cssLoader];
+	const svgLoader: RuleSetRule = {
+		test: /\.svg$/i,
+		issuer: /\.[jt]sx?$/,
+		use: ['@svgr/webpack'],
+	};
+
+	const fileLoader: RuleSetRule = {
+		test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+		use: [
+			{
+				loader: 'file-loader',
+			},
+		],
+	};
+	return [svgLoader, fileLoader, tsLoader, cssLoader];
 };
 
 export default loaders;

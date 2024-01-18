@@ -1,0 +1,27 @@
+.control {
+	display: none;
+
+	@media screen and (width >= 720px) {
+		user-select: none;
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+}
+
+.icon {
+	cursor: default;
+	transform: scale(1.5);
+	color: var(--text-placeholder);
+	transition: color 0.3s;
+}
+
+.active {
+	cursor: pointer;
+	color: var(--transparent);
+	transition: color 0.3s linear;
+
+	&:hover {
+		color: var(--text);
+	}
+}

@@ -1,155 +1,252 @@
-:root {
-	// h1 medium
-	--font-size-h1-m: 56px;
-	--font-weight-h1-m: 700;
-	--line-height-h1-m: 150%;
-	--letter-spacing-h1-m: 0.03em;
-	--text-transform-h1-m: uppercase;
+/* stylelint-disable order/properties-order */
+@mixin apply-preset($preset, $values) {
+	@if $preset == 'desktop' {
+		font-size: nth($values, 1);
+		font-weight: nth($values, 2);
+		line-height: nth($values, 3);
+		letter-spacing: nth($values, 4);
+		text-transform: nth($values, 5);
+	} @else if $preset == 'mobile' {
+		@media (width <= 767px) {
+			font-size: nth($values, 1);
+		}
+	}
+}
 
-	// h1 small
-	--font-size-h1-s: 48px;
-	--font-weight-h1-s: 400;
-	--line-height-h1-s: normal;
-	--letter-spacing-h1-s: normal;
-	--text-transform-h1-s: none;
+@mixin apply-presets($presets) {
+	@each $preset, $values in $presets {
+		@include apply-preset($preset, $values);
+	}
+}
 
-	// h2 medium
-	--font-size-h2-m: 48px;
-	--font-weight-h2-m: 700;
-	--line-height-h2-m: 150%;
-	--letter-spacing-h2-m: 0.03em;
-	--text-transform-h2-m: uppercase;
+@mixin h1 {
+	$presets: (
+		'desktop': (
+			56px,
+			700,
+			150%,
+			0.03em,
+			uppercase,
+		),
+		'mobile': (
+			48px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// h2 small
-	--font-size-h2-s: 38px;
-	--font-weight-h2-s: 400;
-	--line-height-h2-s: normal;
-	--letter-spacing-h2-s: normal;
-	--text-transform-h2-s: none;
+	@include apply-presets($presets);
+}
 
-	// h3 medium
-	--font-size-h3-m: 36px;
-	--font-weight-h3-m: 700;
-	--line-height-h3-m: 150%;
-	--letter-spacing-h3-m: normal;
-	--text-transform-h3-m: none;
+@mixin h2 {
+	$presets: (
+		'desktop': (
+			48px,
+			700,
+			150%,
+			0.03em,
+			uppercase,
+		),
+		'mobile': (
+			38px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// h3 small
-	--font-size-h3-s: 28px;
-	--font-weight-h3-s: 700;
-	--line-height-h3-s: normal;
-	--letter-spacing-h3-s: normal;
-	--text-transform-h3-s: none;
+	@include apply-presets($presets);
+}
 
-	// h4 medium
-	--font-size-h4-m: 24px;
-	--font-weight-h4-m: 700;
-	--line-height-h4-m: 150%;
-	--letter-spacing-h4-m: normal;
-	--text-transform-h4-m: none;
+@mixin h3 {
+	$presets: (
+		'desktop': (
+			36px,
+			700,
+			150%,
+			null,
+			null,
+		),
+		'mobile': (
+			28px,
+			700,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// h4 small
-	--font-size-h4-s: 18px;
-	--font-weight-h4-s: 400;
-	--line-height-h4-s: normal;
-	--letter-spacing-h4-s: normal;
-	--text-transform-h4-s: none;
+	@include apply-presets($presets);
+}
 
-	// h5 medium
-	--font-size-h5-m: 16px;
-	--font-weight-h5-m: 700;
-	--line-height-h5-m: 155%;
-	--letter-spacing-h5-m: normal;
-	--text-transform-h5-m: none;
+@mixin h4 {
+	$presets: (
+		'desktop': (
+			24px,
+			700,
+			150%,
+			null,
+			null,
+		),
+		'mobile': (
+			18px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// h5 small
-	--font-size-h5-s: 14px;
-	--font-weight-h5-s: 400;
-	--line-height-h5-s: normal;
-	--letter-spacing-h5-s: normal;
-	--text-transform-h5-s: none;
+	@include apply-presets($presets);
+}
 
-	// h6 medium
-	--font-size-h6-m: 14px;
-	--font-weight-h6-m: 700;
-	--line-height-h6-m: 155%;
-	--letter-spacing-h6-m: normal;
-	--text-transform-h6-m: none;
+@mixin h5 {
+	$presets: (
+		'desktop': (
+			16px,
+			700,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			14px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// h6 small
-	--font-size-h6-s: 12px;
-	--font-weight-h6-s: 400;
-	--line-height-h6-s: normal;
-	--letter-spacing-h6-s: normal;
-	--text-transform-h6-s: none;
+	@include apply-presets($presets);
+}
 
-	// p1 medium
-	--font-size-p1-m: 20px;
-	--font-weight-p1-m: 400;
-	--line-height-p1-m: 155%;
-	--letter-spacing-p1-m: normal;
-	--text-transform-p1-m: none;
+@mixin h6 {
+	$presets: (
+		'desktop': (
+			14px,
+			700,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			12px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// p1 small
-	--font-size-p1-s: 16px;
-	--font-weight-p1-s: 400;
-	--line-height-p1-s: normal;
-	--letter-spacing-p1-s: normal;
-	--text-transform-p1-s: none;
+	@include apply-presets($presets);
+}
 
-	// p2 medium
-	--font-size-p2-m: 16px;
-	--font-weight-p2-m: 400;
-	--line-height-p2-m: 155%;
-	--letter-spacing-p2-m: normal;
-	--text-transform-p2-m: none;
+@mixin p1 {
+	$presets: (
+		'desktop': (
+			20px,
+			400,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			16px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// p2 small
-	--font-size-p2-s: 14px;
-	--font-weight-p2-s: 400;
-	--line-height-p2-s: normal;
-	--letter-spacing-p2-s: normal;
-	--text-transform-p2-s: none;
+	@include apply-presets($presets);
+}
 
-	// p3 medium
-	--font-size-p3-m: 14px;
-	--font-weight-p3-m: 400;
-	--line-height-p3-m: 155%;
-	--letter-spacing-p3-m: normal;
-	--text-transform-p3-m: none;
+@mixin p2 {
+	$presets: (
+		'desktop': (
+			16px,
+			400,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			14px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// p3 small
-	--font-size-p3-s: 12px;
-	--font-weight-p3-s: 400;
-	--line-height-p3-s: normal;
-	--letter-spacing-p3-s: normal;
-	--text-transform-p3-s: none;
+	@include apply-presets($presets);
+}
 
-	// p4 medium
-	--font-size-p4-m: 12px;
-	--font-weight-p4-m: 400;
-	--line-height-p4-m: 155%;
-	--letter-spacing-p4-m: normal;
-	--text-transform-p4-m: none;
+@mixin p3 {
+	$presets: (
+		'desktop': (
+			14px,
+			400,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			12px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// p4 small
-	--font-size-p4-s: 10px;
-	--font-weight-p4-s: 400;
-	--line-height-p4-s: normal;
-	--letter-spacing-p4-s: normal;
-	--text-transform-p4-s: none;
+	@include apply-presets($presets);
+}
 
-	// label medium
-	--font-size-label-m: 18px;
-	--font-weight-label-m: 700;
-	--line-height-label-m: 150%;
-	--letter-spacing-label-m: 0.03em;
-	--text-transform-label-m: uppercase;
+@mixin p4 {
+	$presets: (
+		'desktop': (
+			12px,
+			400,
+			155%,
+			null,
+			null,
+		),
+		'mobile': (
+			10px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
 
-	// label small
-	--font-size-label-s: 16px;
-	--font-weight-label-s: 400;
-	--line-height-label-s: normal;
-	--letter-spacing-label-s: normal;
-	--text-transform-label-s: none;
+	@include apply-presets($presets);
+}
+
+@mixin label {
+	$presets: (
+		'desktop': (
+			18px,
+			700,
+			150%,
+			0.03em,
+			uppercase,
+		),
+		'mobile': (
+			16px,
+			null,
+			null,
+			null,
+			null,
+		),
+	);
+
+	@include apply-presets($presets);
 }

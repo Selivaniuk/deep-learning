@@ -1,0 +1,13 @@
+.page {
+	padding-top: calc(var(--page-default-top-padding) + var(--header-height));
+	padding-left: calc(
+		var(--page-default-left-padding) + var(--sidebar-width-close)
+	);
+	transition: padding 0.2s linear;
+
+	&.small {
+		padding-left: calc(
+			var(--page-default-left-padding) + var(--sidebar-width-open)
+		);
+	}
+}
