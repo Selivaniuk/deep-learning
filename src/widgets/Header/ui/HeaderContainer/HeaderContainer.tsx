@@ -7,8 +7,11 @@ import classNames from 'shared/lib/classNames/classNames';
 
 const HeaderContainer: FC<PropsWithChildren> = ({children}) => {
 	const {isOpen} = useSidebar();
+
 	return (
-		<header className={classNames(styles.header, {[styles.small]: isOpen})}>
+		<header
+			className={classNames([styles.header, {[styles.small]: isOpen}])}
+		>
 			{children}
 		</header>
 	);

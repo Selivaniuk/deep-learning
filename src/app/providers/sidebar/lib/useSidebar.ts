@@ -17,11 +17,13 @@ const useSidebar = (): UseSidebarResult => {
 	const {sidebarState, setSidebarState} = useContext(SidebarContext);
 
 	const openSidebar = (): void => {
+		if (sidebarState === SidebarState.OPEN) return;
 		setSidebarState?.(SidebarState.OPEN);
 		localStorage.setItem(LOCAL_STORAGE_SIDEBAR_KEY, SidebarState.OPEN);
 	};
 
 	const closeSidebar = (): void => {
+		if (sidebarState === SidebarState.CLOSE) return;
 		setSidebarState?.(SidebarState.CLOSE);
 		localStorage.setItem(LOCAL_STORAGE_SIDEBAR_KEY, SidebarState.CLOSE);
 	};
@@ -29,9 +31,9 @@ const useSidebar = (): UseSidebarResult => {
 	const toggleSidebar = (): void => {
 		if (sidebarState === SidebarState.OPEN) {
 			closeSidebar();
-			return;
+		} else {
+			openSidebar();
 		}
-		openSidebar();
 	};
 
 	const isOpen = useMemo<boolean>(

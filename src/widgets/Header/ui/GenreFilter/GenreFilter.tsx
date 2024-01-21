@@ -50,9 +50,13 @@ const GenreFilter: FC = () => {
 					onClick={() => {
 						onFilterClick(filter.value);
 					}}
-					className={classNames(styles.filter, {
-						[styles.activeFilter]: activeFilter === filter.value,
-					})}
+					className={classNames([
+						styles.filter,
+						{
+							[styles.activeFilter]:
+								activeFilter === filter.value,
+						},
+					])}
 					key={filter.value}
 				>
 					<span className={styles.label}>{filter.label}</span>

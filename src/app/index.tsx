@@ -1,24 +1,19 @@
-import {memo, type FC} from 'react';
-import './styles/index.scss';
+import {type FC} from 'react';
 
 import {AppRouter} from './providers/router';
-import {useTheme} from './providers/theme';
 
-import classNames from 'shared/lib/classNames/classNames';
 import Layout from 'widgets/Layout';
+import ThemeContainer from 'widgets/ThemeContainer/ThemeContainer';
 
-const MemoizedLayout = memo(Layout);
-const MemoizedAppRouter = memo(AppRouter);
+import './styles/index.scss';
 
 const App: FC = () => {
-	const {theme} = useTheme();
-
 	return (
-		<div className={classNames('app', {}, [theme])}>
-			<MemoizedLayout>
-				<MemoizedAppRouter />
-			</MemoizedLayout>
-		</div>
+		<ThemeContainer>
+			<Layout>
+				<AppRouter />
+			</Layout>
+		</ThemeContainer>
 	);
 };
 

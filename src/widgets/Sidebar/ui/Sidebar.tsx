@@ -3,72 +3,30 @@ import {Link, useLocation} from 'react-router-dom';
 
 import styles from './Sidebar.module.scss';
 
+import {SIDEBAR_ITEMS} from '../lib/sidebarItems';
+
 import {useSidebar} from 'app/providers/sidebar';
-import ClockIcon from 'shared/assets/icons/Clock.svg';
-import ContinueIcon from 'shared/assets/icons/Continue.svg';
-import HistoryIcon from 'shared/assets/icons/History.svg';
-import HomeIcon from 'shared/assets/icons/Home.svg';
 import LogoLargeIcon from 'shared/assets/icons/logo/Large.svg';
 import LogoSmallIcon from 'shared/assets/icons/logo/Small.svg';
-import MovieIcon from 'shared/assets/icons/Movie.svg';
-import UsersIcon from 'shared/assets/icons/Users.svg';
 import classNames from 'shared/lib/classNames/classNames';
 
-const SIDEBAR_LINKS = [
-	{
-		category: 'Menu',
-		links: [
-			{label: 'Home', href: '/', icon: <HomeIcon />},
-			{
-				label: 'Watch later',
-				href: '/test',
-				// href: '/watch-later',
-				icon: <ClockIcon />,
-			},
-			{
-				label: 'Continue watching',
-				href: '/continue-watching',
-				icon: <ContinueIcon />,
-			},
-			{
-				label: 'History',
-				href: '/history',
-				icon: <HistoryIcon />,
-			},
-		],
-	},
-	{
-		category: 'Social',
-		links: [
-			{
-				label: 'Friends',
-				href: '/friends',
-				icon: <UsersIcon />,
-			},
-			{
-				label: 'Rooms',
-				href: '/rooms',
-				icon: <MovieIcon />,
-			},
-		],
-	},
-];
-
-const Navbar: FC = () => {
+const Sidebar: FC = () => {
 	const {pathname} = useLocation();
 	const {isOpen} = useSidebar();
 
 	return (
-		<div className={classNames(styles.sidebar, {[styles.isOpen]: isOpen})}>
+		<div
+			className={classNames([styles.sidebar, {[styles.isOpen]: isOpen}])}
+		>
 			{isOpen ? (
 				<LogoLargeIcon className={styles.logo} />
 			) : (
 				<LogoSmallIcon
-					className={classNames(styles.logo, {}, [styles.small])}
+					className={classNames([styles.logo, styles.small])}
 				/>
 			)}
 
-			{SIDEBAR_LINKS.map(({category, links}) => (
+			{SIDEBAR_ITEMS.map(({category, links}) => (
 				<div className={styles.category} key={category}>
 					<p className={styles.label}>{category}</p>
 					<ul className={styles.links}>
@@ -76,9 +34,10 @@ const Navbar: FC = () => {
 							const isActive = pathname === href;
 							return (
 								<Link
-									className={classNames(styles.link, {
-										[styles.active]: isActive,
-									})}
+									className={classNames([
+										styles.link,
+										{[styles.active]: isActive},
+									])}
 									to={href}
 									key={href}
 								>
@@ -95,4 +54,4 @@ const Navbar: FC = () => {
 	);
 };
 
-export default Navbar;
+export default Sidebar;

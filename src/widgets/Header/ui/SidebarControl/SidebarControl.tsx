@@ -10,23 +10,18 @@ import classNames from 'shared/lib/classNames/classNames';
 const SidebarControl: FC = () => {
 	const {isOpen, openSidebar, closeSidebar} = useSidebar();
 
-	const onClose = (): void => {
-		isOpen && closeSidebar();
-	};
-
-	const onOpen = (): void => {
-		!isOpen && openSidebar();
-	};
-
 	return (
 		<div className={styles.control}>
 			<ChevronLeftIcon
-				onClick={onClose}
-				className={classNames(styles.icon, {[styles.active]: isOpen})}
+				onClick={closeSidebar}
+				className={classNames([styles.icon, {[styles.active]: isOpen}])}
 			/>
 			<ChevronRightIcon
-				onClick={onOpen}
-				className={classNames(styles.icon, {[styles.active]: !isOpen})}
+				onClick={openSidebar}
+				className={classNames([
+					styles.icon,
+					{[styles.active]: !isOpen},
+				])}
 			/>
 		</div>
 	);
