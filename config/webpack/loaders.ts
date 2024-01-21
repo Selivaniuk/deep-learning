@@ -1,4 +1,5 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshTypeScript from 'react-refresh-typescript';
 import {type RuleSetRule} from 'webpack';
 
 import {type BuildPaths} from './types';
@@ -36,14 +37,26 @@ const loaders = (paths: BuildPaths, isDev: boolean): RuleSetRule[] => {
 
 	const tsLoader: RuleSetRule = {
 		test: /\.tsx?$/,
-		use: 'ts-loader',
 		exclude: /node_modules/,
+		use: [
+			{
+				loader: 'ts-loader',
+				options: {
+					getCustomTransformers: () => ({
+						before: [isDev && ReactRefreshTypeScript()].filter(
+							Boolean,
+						),
+					}),
+					transpileOnly: isDev,
+				},
+			},
+		],
 	};
 
 	const svgLoader: RuleSetRule = {
 		test: /\.svg$/i,
 		issuer: /\.[jt]sx?$/,
-		use: ['@svgr/webpack'],
+		use: [{loader: '@svgr/webpack', options: {icon: true}}],
 	};
 
 	const fileLoader: RuleSetRule = {

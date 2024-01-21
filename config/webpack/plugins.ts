@@ -1,6 +1,8 @@
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 import {
 	type WebpackPluginInstance,
 	ProgressPlugin,
@@ -19,6 +21,7 @@ const configurationPlugins = (
 	];
 	if (isDev) {
 		plugins.push(new ReactRefreshWebpackPlugin());
+		plugins.push(new ForkTsCheckerWebpackPlugin());
 		plugins.push(new HotModuleReplacementPlugin());
 	} else {
 		plugins.push(
@@ -29,7 +32,7 @@ const configurationPlugins = (
 		);
 	}
 
-	return plugins.filter(Boolean);
+	return plugins;
 };
 
 export default configurationPlugins;

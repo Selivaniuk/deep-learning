@@ -25,7 +25,7 @@ const webpackConfig = ({
 		clean: true,
 	},
 	plugins: plugins(paths, isDev),
-	devtool: isDev ? 'inline-source-map' : undefined,
+	devtool: isDev ? 'eval-source-map' : undefined,
 	devServer: isDev ? devServer(port) : undefined,
 });
 
