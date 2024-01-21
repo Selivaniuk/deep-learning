@@ -1,11 +1,37 @@
 {
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
 
-	"i18n-ally.localesPaths": [
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[scss]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
 
-		"public/locales",
-		"src/shared/config/i18n"
-	],
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+
+	"eslint.validate": ["typescript", "typescriptreact"],
+
+	"prettier.requireConfig": true,
+
+	"stylelint.validate": ["css", "scss"],
+
+	"cSpell.language": "en,ru",
+
+	"i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
 	"i18n-ally.namespace": true,
-		
-	"i18n-ally.keystyle": "nested"
+	"i18n-ally.keystyle": "nested",
+
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"package.json": "package-lock.json, .stylelintrc.json, .eslintrc.js, .prettierrc, tsconfig.json, webpack.config.ts"
+	}
 }

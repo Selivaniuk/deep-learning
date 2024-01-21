@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"streetsidesoftware.code-spell-checker",
+		"streetsidesoftware.code-spell-checker-russian",
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"lokalise.i18n-ally",
+		"stylelint.vscode-stylelint"
+	],
+	"unwantedRecommendations": []
+}
