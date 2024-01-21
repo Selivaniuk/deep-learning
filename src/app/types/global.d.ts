@@ -22,3 +22,6 @@ declare module '*.png' {
 	const src: string;
 	export default src;
 }
+
+// eslint-disable-next-line @typescript-eslint/naming-convention
+declare const __IS_DEV__: boolean;

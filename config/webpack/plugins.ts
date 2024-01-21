@@ -7,6 +7,7 @@ import {
 	type WebpackPluginInstance,
 	ProgressPlugin,
 	HotModuleReplacementPlugin,
+	DefinePlugin,
 } from 'webpack';
 
 import {type BuildPaths} from './types';
@@ -18,6 +19,9 @@ const configurationPlugins = (
 	const plugins = [
 		new HtmlWebpackPlugin({template: paths.html}),
 		new ProgressPlugin(),
+		new DefinePlugin({
+			__IS_DEV__: isDev,
+		}),
 	];
 	if (isDev) {
 		plugins.push(new ReactRefreshWebpackPlugin());

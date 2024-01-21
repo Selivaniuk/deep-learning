@@ -5,6 +5,7 @@ import {BrowserRouter} from 'react-router-dom';
 import App from 'app';
 import {SidebarProvider} from 'app/providers/sidebar';
 import {ThemeProvider} from 'app/providers/theme';
+import 'shared/config/i18n/i18n';
 
 const domNode = document.getElementById('root');
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

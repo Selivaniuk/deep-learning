@@ -3,7 +3,7 @@ import {Link, useLocation} from 'react-router-dom';
 
 import styles from './Sidebar.module.scss';
 
-import {SIDEBAR_ITEMS} from '../lib/sidebarItems';
+import {getSidebarItems} from '../lib/sidebarItems';
 
 import {useSidebar} from 'app/providers/sidebar';
 import LogoLargeIcon from 'shared/assets/icons/logo/Large.svg';
@@ -13,7 +13,7 @@ import classNames from 'shared/lib/classNames/classNames';
 const Sidebar: FC = () => {
 	const {pathname} = useLocation();
 	const {isOpen} = useSidebar();
-
+	const sidebarItems = getSidebarItems();
 	return (
 		<div
 			className={classNames([styles.sidebar, {[styles.isOpen]: isOpen}])}
@@ -26,7 +26,7 @@ const Sidebar: FC = () => {
 				/>
 			)}
 
-			{SIDEBAR_ITEMS.map(({category, links}) => (
+			{sidebarItems.map(({category, links}) => (
 				<div className={styles.category} key={category}>
 					<p className={styles.label}>{category}</p>
 					<ul className={styles.links}>
