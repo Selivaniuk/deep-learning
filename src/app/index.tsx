@@ -1,4 +1,4 @@
-import {type FC} from 'react';
+import {Suspense, type FC} from 'react';
 
 import {AppRouter} from './providers/router';
 
@@ -10,9 +10,11 @@ import './styles/index.scss';
 const App: FC = () => {
 	return (
 		<ThemeContainer>
-			<Layout>
-				<AppRouter />
-			</Layout>
+			<Suspense fallback=''>
+				<Layout>
+					<AppRouter />
+				</Layout>
+			</Suspense>
 		</ThemeContainer>
 	);
 };

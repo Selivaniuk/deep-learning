@@ -1,14 +1,15 @@
 {
-  "All shows": "Все",
-  "Movies": "Фильмы",
-  "serials": "Сериалы",
-  "anime": "Аниме",
-  "sidebar-menu-link-home": "Главная",
-  "sidebar-menu-link-watch-later": "Смотреть позже",
-  "sidebar-menu-link-continue-watching": "Продолжить просмотр",
-  "sidebar-menu-link-history": "История",
-  "sidebar-social-link-friends": "Друзья",
-  "sidebar-social-link-rooms": "Комнаты",
-  "sidebar-menu-label": "Меню",
-  "sidebar-social-label": "Социальное"
+	"All shows": "Все жанры",
+	"Movies": "Фильмы",
+	"serials": "Сериалы",
+	"anime": "Аниме",
+	"sidebar-menu-label": "Меню",
+	"sidebar-menu-link-home": "Главная",
+	"sidebar-menu-link-watch-later": "Смотреть позже",
+	"sidebar-menu-link-continue-watching": "Продолжить просмотр",
+	"sidebar-menu-link-history": "История",
+	"sidebar-social-label": "Социальное",
+	"sidebar-social-link-friends": "Друзья",
+	"sidebar-social-link-rooms": "Комнаты",
+	"app-language": "RU"
 }

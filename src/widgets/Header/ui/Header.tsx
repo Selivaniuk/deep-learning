@@ -3,9 +3,9 @@ import {type FC} from 'react';
 import GenreFilter from './GenreFilter/GenreFilter';
 import styles from './Header.module.scss';
 import HeaderContainer from './HeaderContainer/HeaderContainer';
+import LanguageSwitcher from './LanguageSwitcher/LanguageSwitcher';
 import SidebarControl from './SidebarControl/SidebarControl';
-
-import ThemeSwitcher from 'widgets/ThemeSwitcher/ThemeSwitcher';
+import ThemeSwitcher from './ThemeSwitcher/ThemeSwitcher';
 
 const Header: FC = () => {
 	return (
@@ -19,6 +19,7 @@ const Header: FC = () => {
 				</div>
 				<div className={styles.right}>
 					<ThemeSwitcher />
+					<LanguageSwitcher />
 				</div>
 			</div>
 		</HeaderContainer>

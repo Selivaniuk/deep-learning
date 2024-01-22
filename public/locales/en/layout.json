@@ -1,14 +1,15 @@
 {
-  "All shows": "All shows",
-  "Movies": "Movies",
-  "serials": "Serials",
-  "anime": "Anime",
-  "sidebar-menu-link-home": "Home",
-  "sidebar-menu-link-watch-later": "Watch later",
-  "sidebar-menu-link-continue-watching": "Continue watching",
-  "sidebar-menu-link-history": "History",
-  "sidebar-social-link-friends": "Friends",
-  "sidebar-social-link-rooms": "Rooms",
-  "sidebar-menu-label": "Menu",
-  "sidebar-social-label": "Social"
+	"All shows": "All shows",
+	"Movies": "Movies",
+	"serials": "Serials",
+	"anime": "Anime",
+	"sidebar-menu-label": "Menu",
+	"sidebar-menu-link-home": "Home",
+	"sidebar-menu-link-watch-later": "Watch later",
+	"sidebar-menu-link-continue-watching": "Continue watching",
+	"sidebar-menu-link-history": "History",
+	"sidebar-social-label": "Social",
+	"sidebar-social-link-friends": "Friends",
+	"sidebar-social-link-rooms": "Rooms",
+	"app-language": "EN"
 }
