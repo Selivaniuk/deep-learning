@@ -4,15 +4,15 @@ import Backend from 'i18next-http-backend';
 import {initReactI18next} from 'react-i18next';
 
 export enum AppLanguage {
-	EN = 'en',
-	RU = 'ru',
+	ENGLISH = 'en',
+	RUSSIAN = 'ru',
 }
 
 use(Backend)
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
-		fallbackLng: AppLanguage.EN,
+		fallbackLng: AppLanguage.ENGLISH,
 		debug: __IS_DEV__,
 
 		interpolation: {

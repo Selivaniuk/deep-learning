@@ -49,7 +49,6 @@ const Sidebar: FC = () => {
 					</ul>
 				</div>
 			))}
-			{/* <button onClick={toggleSidebar}>toggle</button> */}
 		</div>
 	);
 };

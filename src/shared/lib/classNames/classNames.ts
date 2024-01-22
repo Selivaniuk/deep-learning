@@ -7,26 +7,25 @@ const classNames = (
 		return '';
 	}
 
-	const result: string[] = [];
-
-	args.forEach(arg => {
-		if (arg === undefined || arg === null) {
-			return;
-		}
+	const filteredArgs = args.filter(Boolean) as Array<Mods | string>;
+	if (filteredArgs.length === 0) {
+		return '';
+	}
+	const result: string[] = filteredArgs.map(arg => {
 		if (typeof arg === 'string' && arg.length > 0) {
-			result.push(arg);
+			return arg;
 		} else {
-			const trueValues = Object.entries(arg).filter(([_, value]) =>
-				Boolean(value),
+			const trueValues = Object.entries(arg as Mods).filter(
+				([_, value]) => Boolean(value),
 			);
-
 			if (trueValues.length > 0) {
 				const cls = trueValues
 					.map(([className]) => className)
 					.join(' ');
-				result.push(cls);
+				return cls;
 			}
 		}
+		return '';
 	});
 	return result.join(' ');
 };
