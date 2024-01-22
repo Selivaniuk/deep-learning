@@ -7,8 +7,8 @@ interface UseThemeResult {
 	toggleTheme: () => void;
 }
 
-const defaultTheme =
-	(localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? Theme.LIGHT;
+export const defaultTheme =
+	(localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) ?? Theme.DARK;
 
 const useTheme = (): UseThemeResult => {
 	const {theme, setTheme} = useContext(ThemeContext);
